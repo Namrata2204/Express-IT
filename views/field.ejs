@@ -1,0 +1,19 @@
+
+    <%- include("partials/header"); -%>
+
+    <body>
+    <div class="container">
+      <div class="card col-lg-2.7 change-pos">
+        <a class="btn btn-dark btn-md" href="/compose" role="button">Create</a>
+        <a class="btn btn-dark btn-md" href="/logout" role="button">Logout</a>
+      </div>
+    <p></p>
+    <% posts.forEach(function(post){ %>
+      <br><br>
+    <h1><%= post.title %></h1>
+    <p><%= post.content.substring(0,500)+"...." %>
+    <a href="/posts/<%= post._id %>">Read more</a>
+    <br>
+    </p>
+     <% }) %>
+    <%- include("partials/footer"); -%>
